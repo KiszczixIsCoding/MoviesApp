@@ -26,7 +26,9 @@
 </template>
 
 <script>
-import Movies from '../assets/movies.json'
+import Movies from '../assets/movies.json';
+import _ from 'underscore';
+
 
 export default {
   name: 'Table',
@@ -36,6 +38,17 @@ export default {
           movies: Movies,
           displayIndex: 10
       }
+  },
+  created: function() {
+    //console.log("po przefiltrowaniu")
+    this.emitter.on('filtered_films', (filtered_films)=>{
+      this.movies = filtered_films;
+    })
+   // console.log("po przefiltrowaniu wielkosc: " + _.size(this.movies));
+  },
+  mounted: function() {
+    //console.log("wysylamy do przefiltrowania")
+    this.emitter.emit('emitted_table', this.movies)  
   },
   methods: {
     increment: function() {
