@@ -1,22 +1,24 @@
 <template>
-  <div class="table">
-      <table>
-          <thead>
-            <th>Title</th>
-            <th>Production year</th>
-            <th>Cast</th>
-            <th>Genres</th>
-          </thead>
-          <tbody>
-            <tr v-for="movie in movies" v-bind:key="movie">
-                <td>{{movie.title}}</td>
-                <td>{{movie.year}}</td>
-                <td>{{movie.cast.join(', ')}}</td>
-                <td>{{movie.genres.join(', ')}}</td>
-            </tr>
-          </tbody>
-      </table>
-  </div>
+      <div class="container">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope='col'>Title</th>
+                    <th scope='col'>Production year</th>
+                    <th scope='col'>Cast</th>
+                    <th scope='col'>Genres</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="movie in movies" v-bind:key="movie">
+                    <th scope='row'>{{movie.title}}</th>
+                    <td>{{movie.year}}</td>
+                    <td>{{movie.cast.join(', ')}}</td>
+                    <td>{{movie.genres.join(', ')}}</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
 </template>
 
 <script>
@@ -47,5 +49,8 @@ li {
 }
 a {
   color: #42b983;
+}
+th {
+  vertical-align: center;
 }
 </style>
