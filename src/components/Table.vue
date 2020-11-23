@@ -10,7 +10,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="movie in movies" v-bind:key="movie">
+                <tr v-for="movie in movies.slice(0, displayIndex)" v-bind:key="movie.title">
                     <th scope='row'>{{movie.title}}</th>
                     <td>{{movie.year}}</td>
                     <td>{{movie.cast.join(', ')}}</td>
@@ -18,6 +18,10 @@
                 </tr>
             </tbody>
         </table>
+        <div>
+          <button v-on:click="decrement()" id="button1" type="button" class="btn btn-outline-primary">Show less</button>
+          <button v-on:click="increment()" id="button2" type="button" class="btn btn-outline-primary">Show more</button>
+        </div>
       </div>
 </template>
 
@@ -26,10 +30,24 @@ import Movies from '../assets/movies.json'
 
 export default {
   name: 'Table',
-  data: function() {
+  data: 
+    function() {
       return {
-          movies: Movies
+          movies: Movies,
+          displayIndex: 10
       }
+  },
+  methods: {
+    increment: function() {
+      if (this.displayIndex < Movies.length) {
+        this.displayIndex += 10
+      }
+    },
+    decrement: function() {
+      if (this.displayIndex > 10) {
+        this.displayIndex -= 10
+      }
+    }
   }
 }
 </script>
@@ -50,7 +68,13 @@ li {
 a {
   color: #42b983;
 }
-th {
-  vertical-align: center;
+#button1 {
+  margin: 15px 45px 35px 80px;
+  float: left;
+} 
+#button2 {
+  margin: 15px 80px 15px 45px;
+  float: right;
 }
+
 </style>
