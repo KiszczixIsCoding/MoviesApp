@@ -1,6 +1,6 @@
 <template>
   <div class="container" id="genres_container">
-      <h3> Filmy według gatunku </h3>
+      <h3>Movies sorted by genres</h3>
     <ul class="list-group" id="list_by_genres">
       <li class="list-group-item-primary" v-for="genre in genres_table" v-bind:key="genre">
         {{ genre }}

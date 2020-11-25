@@ -2,13 +2,14 @@
   <Search />
   <Table />
   <FilteredByGenre />
-
+  <FilteredByCast />
 </template>
 
 <script>
 import Search from './components/Search.vue'
 import Table from './components/Table.vue'
 import FilteredByGenre from './components/FilteredByGenre.vue'
+import FilteredByCast from './components/FilteredByCast.vue'
 
 export default {
   name: 'App',
@@ -16,8 +17,7 @@ export default {
     Search,
     Table,
     FilteredByGenre,
-
-    
+    FilteredByCast
   }
 }
 </script>

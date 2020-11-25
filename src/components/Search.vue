@@ -2,24 +2,36 @@
     <div class="container">
     <form>
         <div class="form-group">
-            <label for=inputTitle>Wyszukaj film</label>
-            <input type="text" v-model="movie.title" id=inputTitle class="form-control" placeholder="Podaj tytuł lub fragment tytułu filmu"/>
+            <div class="d-flex">
+                <label class="justify-content-left" for="inputTitle">Wyszukaj film</label>
+            </div>
+            <input type="text" v-model="movie.title" id=inputTitle class="form-control col-sm-12" 
+            placeholder="Podaj tytuł lub fragment tytułu filmu"/>
         </div>
         <div class="form-group row">
-          <label class="col-sm-4 col-form-label" for="inputProductionFrom">Rok produkcji od:</label>
+          <div class="col-sm-4 d-flex">
+          <label class="col-form-label" for="inputProductionFrom">Rok produkcji od:</label>
+          </div>
           <div class="col-sm-8">
-              <input type="text" v-model="movie.year_from" id=inputProductionFrom class="form-control"  placeholder="Liczba naturalna z przedziału 1900-2019"/>
+              <input type="text" v-model="movie.year_from" id=inputProductionFrom class="form-control"  
+              placeholder="Liczba naturalna z przedziału 1900-2019"/>
           </div>
         </div>
         <div class="form-group row">
-            <label class="col-sm-4 col-form-label" for="inputProductionTo">Rok produkcji do:</label>
+            <div class="col-sm-4 d-flex">
+                <label class="col-form-label justify-content-left" for="inputProductionTo">Rok produkcji do:</label>
+            </div>
             <div class="col-sm-8">
-                <input type="text" v-model="movie.year_to" id=inputProductionTo class="form-control" placeholder="Liczba naturalna z przedziału 1900-2019"/>
+                <input type="text" v-model="movie.year_to" id=inputProductionTo class="form-control" 
+                placeholder="Liczba naturalna z przedziału 1900-2019"/>
             </div>
         </div>
         <div class="form-group">
-          <label for="inputCast">Obsada</label>
-          <input type="text" v-model="movie.cast" id="inputCast" class="form-control" placeholder="Imię i nazwisko"/>
+          <div class="d-flex">
+            <label class="justify-content-left" for="inputCast">Obsada</label>
+          </div>
+          <input type="text" v-model="movie.cast" id="inputCast" class="form-control col-sm-12" 
+          placeholder="Imię i nazwisko"/>
         </div>
         <div class="form-group row">
             <input type="button" @click="emit_films" class="btn btn-info col-sm-12" value="Szukaj"/>
@@ -29,7 +41,6 @@
 </template>
 
 <script>
-//import Movies from '../assets/movies.json'
 import _ from 'underscore';
 
 export default {

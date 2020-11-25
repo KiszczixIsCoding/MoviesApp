@@ -18,9 +18,15 @@
                 </tr>
             </tbody>
         </table>
-        <div>
-          <button v-on:click="decrement()" id="button1" type="button" class="btn btn-outline-primary">Show less</button>
-          <button v-on:click="increment()" id="button2" type="button" class="btn btn-outline-primary">Show more</button>
+        <div class="btn_container mb-sm-2 row">
+          <div class="buttons col-sm-6 md-sm-2 mb-sm-2">
+              <input v-on:click="decrement()"  type="button" value="Show less"
+              class="btn btn-outline-primary md-sm"/>
+          </div>
+          <div class="buttons col-sm-6 md-sm-2 mb-sm-2">
+              <input v-on:click="increment()" type="button" value="Show more" 
+              class="btn btn-outline-primary md-sm"/>
+          </div>
         </div>
       </div>
 </template>
@@ -72,24 +78,15 @@ export default {
 h3 {
   margin: 40px 0 0;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
 a {
   color: #42b983;
 }
-#button1 {
-  margin: 15px 45px 35px 80px;
-  float: left;
-} 
-#button2 {
-  margin: 15px 80px 15px 45px;
-  float: right;
+.btn_container {
+  width: 100%;
+}
+.buttons {
+  width: 100px;
+  height: 50px;
 }
 
 </style>
