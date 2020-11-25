@@ -27,7 +27,7 @@
 
 <script>
 import Movies from '../assets/movies.json';
-import _ from 'underscore';
+//import _ from 'underscore';
 
 
 export default {
@@ -48,7 +48,9 @@ export default {
   },
   mounted: function() {
     //console.log("wysylamy do przefiltrowania")
-    this.emitter.emit('emitted_table', this.movies)  
+    this.emitter.emit('emitted_table', this.movies)
+    this.emitter.emit('table_to_filter_by_genre',this.movies)
+  
   },
   methods: {
     increment: function() {

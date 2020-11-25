@@ -1,17 +1,23 @@
 <template>
   <Search />
   <Table />
+  <FilteredByGenre />
+
 </template>
 
 <script>
 import Search from './components/Search.vue'
 import Table from './components/Table.vue'
+import FilteredByGenre from './components/FilteredByGenre.vue'
 
 export default {
   name: 'App',
   components: {
     Search,
-    Table
+    Table,
+    FilteredByGenre,
+
+    
   }
 }
 </script>
